@@ -96,7 +96,13 @@ function NavItem({ href, title, outlined }: SingleNavItem) {
   }
 
   if (outlined) {
-    return <CustomButton onClick={showNewsletterModal}>{title}</CustomButton>;
+    return (
+      <NavItemWrapper outlined={outlined}>
+        <NextLink href={href} passHref>
+          <CustomButton as="a" onClick={showNewsletterModal}>{title}</CustomButton>
+        </NextLink>
+      </NavItemWrapper>
+    );
   }
 
   return (

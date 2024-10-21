@@ -91,11 +91,11 @@ export default function Homepage() {
           <h2>What Our Clients Say</h2>
           <TestimonialGrid>
             <TestimonialItem>
-              <p>"ChatbotBuilder has transformed our customer service. We&apos;re now able to handle inquiries 24/7, and our response times have decreased by 80%. The AI&apos;s ability to understand context and provide accurate information is impressive."</p>
+              <p>{'ChatbotBuilder has transformed our customer service. We\'re now able to handle inquiries 24/7, and our response times have decreased by 80%. The AI\'s ability to understand context and provide accurate information is impressive.'}</p>
               <cite>- Sarah Johnson, Customer Service Manager at TechCorp</cite>
             </TestimonialItem>
             <TestimonialItem>
-              <p>"As a small business owner, I was skeptical about AI chatbots. But ChatbotBuilder&apos;s platform is so intuitive, I was able to create a customized chatbot for our website in just a few hours. It&apos;s like having an extra team member working round the clock!"</p>
+              <p>{'As a small business owner, I was skeptical about AI chatbots. But ChatbotBuilder\'s platform is so intuitive, I was able to create a customized chatbot for our website in just a few hours. It\'s like having an extra team member working round the clock!'}</p>
               <cite>- Michael Chen, Founder of GreenLeaf Organics</cite>
             </TestimonialItem>
           </TestimonialGrid>

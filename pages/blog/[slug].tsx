@@ -3,6 +3,7 @@ import Head from 'next/head';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { staticRequest } from 'tinacms';
+import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 import Container from 'components/Container';
 import MDXRichText from 'components/MDXRichText';
 import { NonNullableChildrenDeep } from 'types';
@@ -14,7 +15,6 @@ import MetadataHead from 'views/SingleArticlePage/MetadataHead';
 import OpenGraphHead from 'views/SingleArticlePage/OpenGraphHead';
 import ShareWidget from 'views/SingleArticlePage/ShareWidget';
 import StructuredDataHead from 'views/SingleArticlePage/StructuredDataHead';
-import { Posts, PostsDocument, Query } from '.tina/__generated__/types';
 
 export default function SingleArticlePage(props: InferGetStaticPropsType<typeof getStaticProps>) {
   const contentRef = useRef<HTMLDivElement | null>(null);
@@ -22,29 +22,11 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
 
   useEffect(() => {
     calculateReadTime();
-    lazyLoadPrismTheme();
 
     function calculateReadTime() {
       const currentContent = contentRef.current;
       if (currentContent) {
         setReadTime(getReadTime(currentContent.textContent || ''));
-      }
-    }
-
-    function lazyLoadPrismTheme() {
-      const prismThemeLinkEl = document.querySelector('link[data-id="prism-theme"]');
-
-      if (!prismThemeLinkEl) {
-        const headEl = document.querySelector('head');
-        if (headEl) {
-          const newEl = document.createElement('link');
-          newEl.setAttribute('data-id', 'prism-theme');
-          newEl.setAttribute('rel', 'stylesheet');
-          newEl.setAttribute('href', '/prism-theme.css');
-          newEl.setAttribute('media', 'print');
-          newEl.setAttribute('onload', "this.media='all'; this.onload=null;");
-          headEl.appendChild(newEl);
-        }
       }
     }
   }, []);
@@ -61,11 +43,6 @@ export default function SingleArticlePage(props: InferGetStaticPropsType<typeof 
   const absoluteImageUrl = imageUrl.replace(/\/+/, '/');
   return (
     <>
-      <Head>
-        <noscript>
-          <link rel="stylesheet" href="/prism-theme.css" />
-        </noscript>
-      </Head>
       <OpenGraphHead slug={slug} {...meta} />
       <StructuredDataHead slug={slug} {...meta} />
       <MetadataHead {...meta} />
