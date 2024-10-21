@@ -1,13 +1,7 @@
-import NextLink from 'next/link';
 import styled from 'styled-components';
-import { EnvVars } from 'env';
 import Container from 'components/Container';
+import { EnvVars } from 'env';
 import { media } from 'utils/media';
-
-type SingleFooterListItem = { title: string; href: string };
-type FooterListItems = SingleFooterListItem[];
-type SingleFooterList = { title: string; items: FooterListItems };
-type FooterItems = SingleFooterList[];
 
 export default function Footer() {
   return (

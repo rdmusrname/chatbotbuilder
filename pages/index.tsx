@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MdAccountBalance, MdLocalHospital, MdSchool, MdShoppingCart } from 'react-icons/md';
+import { BsCpu, BsDiagram3Fill, BsPaintBucket, BsPuzzle } from 'react-icons/bs';
 import styled, { createGlobalStyle } from 'styled-components';
-import { BsFillBanFill, BsPuzzle, BsPaintBucket, BsDiagram3Fill } from 'react-icons/bs';
-import { MdShoppingCart, MdLocalHospital, MdAccountBalance, MdSchool } from 'react-icons/md';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -50,8 +50,7 @@ export default function Homepage() {
           <FeatureGrid>
             <FeatureItem>
               <IconContainer>
-                {/* Using brain icon to represent AI models */}
-                <BsFillBanFill />
+                <BsCpu /> {/* Using microchip icon to represent AI models */}
               </IconContainer>
               <h3>State-of-the-Art AI Models</h3>
               <p>Harness the power of GPT-4, Gemini 1.5, Claude 3.5, and more. Our platform integrates the latest and most advanced language models to ensure your chatbots deliver human-like interactions and accurate responses.</p>

@@ -1,5 +1,4 @@
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { staticRequest } from 'tinacms';
