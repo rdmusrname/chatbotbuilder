@@ -21,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
   --tertiary: 231,241,251;
   --cardBackground: 255,255,255;
   --inputBackground: 255,255,255;
-  --navbarBackground: 255,255,255;
+  --navbarBackground:  218,177,218,;
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: #243A5A;
@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
   --tertiary: 231,241,251;
   --cardBackground: 45,55,72;
   --inputBackground: 45,55,72;
-  --navbarBackground: 45,55,72;
+  --navbarBackground:  85,26,139;
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;

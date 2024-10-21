@@ -87,8 +87,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </TinaEditProvider>
-        <WaveCta />
-        <Footer />
+        {/* <WaveCta />
+        <Footer /> */}
       </Providers>
     </>
   );
