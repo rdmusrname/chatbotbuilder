@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import styled, { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
@@ -110,9 +111,9 @@ export default function Homepage() {
         <Footer>
           <p>&copy; 2023 ChatbotBuilder. All rights reserved.</p>
           <FooterLinks>
-            <a href="/privacy">Privacy Policy</a>
-            <a href="/terms">Terms of Service</a>
-            <a href="/contact">Contact Us</a>
+            <Link href="/privacy">Privacy Policy</Link>
+            <Link href="/terms">Terms of Service</Link>
+            <Link href="/contact">Contact Us</Link>
           </FooterLinks>
         </Footer>
       </HomepageWrapper>
