@@ -4,22 +4,22 @@ import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 
 import { AppProps } from 'next/dist/shared/lib/router/router';
-import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { ColorModeScript } from 'nextjs-color-mode';
 import React, { PropsWithChildren, useEffect } from 'react';
 import { TinaEditProvider } from 'tinacms/dist/edit-state';
+import TinaCMS from 'tinacms';
 
 import { GlobalStyle } from 'components/GlobalStyles';
 import Navbar from 'components/Navbar';
 import NavigationDrawer from 'components/NavigationDrawer';
 import NewsletterModal from 'components/NewsletterModal';
+import Footer from 'components/Footer';
 import { NewsletterModalContextProvider, useNewsletterModalContext } from 'contexts/newsletter-modal.context';
 import { EnvVars } from 'env';
 import { NavItems } from 'types';
 
 const navItems: NavItems = [
-  // { title: 'Awesome SaaS Features', href: '/features' },
   { title: 'Blog', href: '/blog' },
   { title: 'Contact', href: '/contact' },
   { title: 'About', href: '/about' },
@@ -27,14 +27,10 @@ const navItems: NavItems = [
   { title: 'Sign up', href: '/sign-up', outlined: true },
 ];
 
-const TinaCMS = dynamic(() => import('tinacms'), { ssr: false });
-
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    // Replace with your actual worker URL
     const workerURL = 'https://autonoweb-analytics.youssef02bigra.workers.dev/';
 
-    // Send a fetch request to your worker
     fetch(workerURL, {
       method: 'POST',
       headers: {
@@ -45,22 +41,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         website: EnvVars.SITE_NAME,
       }),
     });
-  }, []);
+  }, []);  // Empty dependency array means this effect runs once on mount
+
   return (
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="icon" type="image/png" href="/favicon.png" />
-        {/* <link rel="alternate" type="application/rss+xml" href={EnvVars.URL + 'rss'} title="RSS 2.0" /> */}
-        {/* <script
-          dangerouslySetInnerHTML={{
-            __html: `window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-          ga('create', 'UA-117119829-1', 'auto');
-          ga('send', 'pageview');`,
-          }}
-        /> */}
-        {/* <script async src="https://www.google-analytics.com/analytics.js"></script> */}
       </Head>
       <ColorModeScript />
       <GlobalStyle />
@@ -85,8 +73,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         >
           <Component {...pageProps} />
         </TinaEditProvider>
-        {/* <WaveCta />
-        <Footer /> */}
+        <Footer />
       </Providers>
     </>
   );

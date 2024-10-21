@@ -1,4 +1,3 @@
-import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
@@ -12,8 +11,7 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
-
-const ColorSwitcher = dynamic(() => import('../components/ColorSwitcher'), { ssr: false });
+import ColorSwitcher from './ColorSwitcher';
 
 type NavbarProps = { items: NavItems };
 type ScrollingDirections = 'up' | 'down' | 'none';
@@ -67,7 +65,7 @@ export default function Navbar({ items }: NavbarProps) {
   return (
     <NavbarContainer hidden={isNavbarHidden} transparent={isTransparent}>
       <Content>
-        <NextLink href="/" passHref> {/* Added href="/" to LogoWrapper */}
+        <NextLink href="/" passHref>
           <LogoWrapper>
             <Logo />
           </LogoWrapper>
