@@ -1,8 +1,22 @@
 import { useColorSwitcher } from 'nextjs-color-mode';
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 
 export default function ColorSwitcher() {
-  const { toggleTheme, colorMode } = useColorSwitcher();
+  const [mounted, setMounted] = useState(false);
+  const [colorMode, setColorMode] = useState('light');
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const { toggleTheme, colorMode: currentColorMode } = useColorSwitcher();
+
+  useEffect(() => {
+    if (mounted) {
+      setColorMode(currentColorMode);
+    }
+  }, [currentColorMode, mounted]);
 
   const sunIcon = (
     <svg width="24" height="24" viewBox="0 0 24 24" focusable="false">
@@ -28,6 +42,10 @@ export default function ColorSwitcher() {
       ></path>
     </svg>
   );
+
+  if (!mounted) {
+    return null;
+  }
 
   return <CustomButton onClick={toggleTheme}>{colorMode === 'light' ? moonIcon : sunIcon}</CustomButton>;
 }

@@ -1,3 +1,4 @@
+import dynamic from 'next/dynamic';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useRef, useState } from 'react';
@@ -11,7 +12,8 @@ import Container from './Container';
 import Drawer from './Drawer';
 import { HamburgerIcon } from './HamburgerIcon';
 import Logo from './Logo';
-import ColorSwitcher from './ColorSwitcher';
+
+const ColorSwitcher = dynamic(() => import('./ColorSwitcher'), { ssr: false });
 
 type NavbarProps = { items: NavItems };
 type ScrollingDirections = 'up' | 'down' | 'none';
