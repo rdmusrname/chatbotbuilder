@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 251,251,253;
   --errorColor: 207,34,46;
   --logoColor: #243A5A;
+  --navbarTextColor: 255,255,255;
 }
 
 .next-dark-theme {
@@ -41,6 +42,7 @@ export const GlobalStyle = createGlobalStyle`
   --modalBackground: 26,32,44;
   --errorColor: 207,34,46;
   --logoColor: #fff;
+  --navbarTextColor: 255,255,255;
 }
 
 :root {

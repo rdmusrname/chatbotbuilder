@@ -24,7 +24,7 @@ const navItems: NavItems = [
   { title: 'Contact', href: '/contact' },
   { title: 'About', href: '/about' },
   { title: 'Privacy', href: '/privacy-policy' },
-  { title: 'Sign up', href: '/sign-up', outlined: true },
+  { title: 'Get Started', href: '/contact', outlined: true },
 ];
 
 function MyApp({ Component, pageProps }: AppProps) {

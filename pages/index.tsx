@@ -39,7 +39,9 @@ export default function Homepage() {
         <HeroSection>
           <h1>Revolutionize Your Business with AI-Powered Chatbots</h1>
           <p>ChatbotBuilder empowers businesses to create sophisticated, custom AI chatbots using cutting-edge language models. Enhance your customer service, streamline internal operations, and boost sales with intelligent conversational AI.</p>
-          <Button>Get Started Free</Button>
+          <Link href="/contact" passHref>
+            <Button as="a">Get Started Free</Button>
+          </Link>
           <ImageContainer>
             <Image src="/images/ai-illustration-1.png" alt="AI Language Model Illustration" width={800} height={480} layout="responsive" />
           </ImageContainer>
@@ -134,7 +136,9 @@ export default function Homepage() {
         <CTASection>
           <h2>Ready to Transform Your Business with AI?</h2>
           <p>Join thousands of businesses already leveraging the power of AI chatbots. With ChatbotBuilder, you&apos;re not just keeping up with the future - you&apos;re leading the way.</p>
-          <Button>Start Your Free Trial</Button>
+          <Link href="/contact" passHref>
+            <Button as="a">Start Your Free Trial</Button>
+          </Link>
           <ImageContainer>
             <Image src="/images/ai-illustration-3.png" alt="Futuristic AI Concept" width={800} height={480} layout="responsive" />
           </ImageContainer>
@@ -186,6 +190,8 @@ const Button = styled.button`
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
 
   &:hover {
     background-color: #c13584;

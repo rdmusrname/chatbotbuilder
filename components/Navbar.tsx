@@ -156,7 +156,7 @@ const NavItemWrapper = styled.li<Partial<SingleNavItem>>`
 
   a {
     display: flex;
-    color: ${(p) => (p.outlined ? 'rgb(var(--textSecondary))' : 'rgb(var(--text), 0.75)')};
+    color: rgb(var(--navbarTextColor)); /* Updated to use the new CSS custom property */
     letter-spacing: 0.025em;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
